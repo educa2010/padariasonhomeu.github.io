@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padaria Sonho Meu</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU LATERAL -->
+<aside class="sidebar">
+  <h1>Padaria Sonho Meu</h1>
+  <nav>
+    <a onclick="showSection('produtos')">🍞 Produtos</a>
+    <a onclick="showSection('carrinho')">🛒 Carrinho</a>
+    <a onclick="showSection('acompanhar')">📦 Acompanhar Pedido</a>
+    <a onclick="showSection('admin')">⚙ Admin</a>
+  </nav>
+</aside>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<main class="main-content">
+
+  <!-- PRODUTOS -->
+  <section id="produtos" class="ativo">
+    <h2>Pães</h2>
+    <div class="grid" id="paes"></div>
+
+    <h2>Bolos</h2>
+    <div class="grid" id="bolos"></div>
+
+    <h2>Bebidas</h2>
+    <div class="grid" id="bebidas"></div>
+  </section>
+
+  <!-- CARRINHO -->
+  <section id="carrinho">
+    <h2>Seu Carrinho</h2>
+    <div id="cartItems"></div>
+    <h3 id="cartTotal"></h3>
+    <label>Forma de Pagamento</label>
+    <select id="pagamento">
+      <option>PIX</option>
+      <option>Cartão</option>
+      <option>Dinheiro</option>
+    </select>
+    <button onclick="finalizarPedido()">Finalizar Pedido</button>
+  </section>
+
+  <!-- ACOMPANHAMENTO -->
+  <section id="acompanhar">
+    <h2>Acompanhar Pedido</h2>
+    <input id="codigoPedido" placeholder="Digite o código do pedido">
+    <button onclick="buscarPedido()">Buscar</button>
+    <div id="resultadoPedido"></div>
+  </section>
+
+  <!-- ADMIN -->
+  <section id="admin">
+    <h2>Painel Administrativo</h2>
+    <div id="adminPedidos"></div>
+  </section>
+
+</main>
+
+<!-- TOAST DE FEEDBACK -->
+<div id="toast">Produto adicionado ao carrinho!</div>
+
+<script src="script.js"></script>
+</body>
+</html>
